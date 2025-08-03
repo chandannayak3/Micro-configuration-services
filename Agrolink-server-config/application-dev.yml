@@ -8,3 +8,4 @@ eureka:
     instance:
         prefer-ip-address: true
         hostname: localhost
+        health-check-url-path: /actuator/health
