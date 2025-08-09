@@ -1,6 +1,4 @@
-# Application configuration for production environment
-spring:
-  welcome:
+welcome:
     message: "Hello from the Default Profile!"
 eureka:
     client:
