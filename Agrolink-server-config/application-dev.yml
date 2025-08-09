@@ -1,4 +1,6 @@
 spring:
+  welcome:
+   message: "Hello from the Dev Profile!"
   data:
     mongodb:
       uri: mongodb://localhost:27017/agrolink

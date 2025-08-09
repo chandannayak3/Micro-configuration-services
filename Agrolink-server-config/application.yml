@@ -1,4 +1,12 @@
 # Application configuration for production environment
+spring:
+  welcome:
+    message: "Hello from the Prod Profile!"
+  data:
+    mongodb:
+      uri: mongodb://prod-db-server:27017/agrolink
+  profiles:
+    active: prod
 eureka:
     client:
         register-with-eureka: true
