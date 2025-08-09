@@ -2,9 +2,6 @@
 spring:
   welcome:
     message: "Hello from the Prod Profile!"
-  data:
-    mongodb:
-      uri: mongodb://prod-db-server:27017/agrolink
   profiles:
     active: prod
 eureka:
