@@ -1,8 +1,9 @@
 # Application configuration for production environment
+welcome:
+  message: "Hello from the Prod Profile!"
 spring:
-  welcome:
-    message: "Hello from the Prod Profile!"
   data:
     mongodb:
-      uri: mongodb://localhost:27017/agrolink
+      uri: mongodb+srv://souravkumarnayak612:iCmVMlIBTnW6OMQV@agrolink.bxuffhn.mongodb.net/agrolink?retryWrites=true&w=majority&appName=AgroLink
+      
 
