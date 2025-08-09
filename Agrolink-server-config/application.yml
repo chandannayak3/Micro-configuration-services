@@ -1,4 +1,8 @@
 # Application configuration for production environment
+spring:
+  profiles:
+    active: dev
+
 eureka:
     client:
         register-with-eureka: true
