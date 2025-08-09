@@ -1,9 +1,7 @@
 # Application configuration for production environment
 spring:
   welcome:
-    message: "Hello from the Prod Profile!"
-  profiles:
-    active: prod
+    message: "Hello from the Default Profile!"
 eureka:
     client:
         register-with-eureka: true

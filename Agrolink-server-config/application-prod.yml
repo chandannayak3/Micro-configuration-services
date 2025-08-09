@@ -1,7 +1,7 @@
 # Application configuration for production environment
 spring:
   welcome:
-    message: "Hello from the Dev Profile!"
+    message: "Hello from the Prod Profile!"
   data:
     mongodb:
       uri: mongodb://localhost:27017/agrolink
