@@ -10,3 +10,14 @@ eureka:
         prefer-ip-address: true
         hostname: localhost
         health-check-url-path: /actuator/health
+        
+management:
+  health:
+    circuitbreaker:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+    health:
+      show-details: always
