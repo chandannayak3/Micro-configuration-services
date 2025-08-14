@@ -7,12 +7,22 @@ spring:
       uri: mongodb+srv://souravkumarnayak612:iCmVMlIBTnW6OMQV@agrolink.bxuffhn.mongodb.net/agrolink?retryWrites=true&w=majority&appName=AgroLink
       
 
+mangement:
+    health:
+     circuitbreaker:
+      enabled: true
+    endpoints:
+      web:
+        exposure:
+          include: health
+    endpoints:
+      show-details: always
 
-resilience4j:
-  circuitbreaker:
-    configs:
-      default:
-        slidingWindowSize: 10
-        minimumNumberOfCalls: 5
-        failureRateThreshold: 50
-        waitDurationInOpenState: 10000
+
+circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 5
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10000
