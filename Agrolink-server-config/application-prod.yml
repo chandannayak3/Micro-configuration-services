@@ -7,11 +7,29 @@ spring:
       uri: mongodb+srv://souravkumarnayak612:iCmVMlIBTnW6OMQV@agrolink.bxuffhn.mongodb.net/agrolink?retryWrites=true&w=majority&appName=AgroLink
       
 
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+  endpoint:
+    health:
+      show-details: always
+
+
 resilience4j:
   circuitbreaker:
-    configs:
-      default:
-        slidingWindowSize: 10
-        minimumNumberOfCalls: 5 # Corrected property name
+    instances:
+      fallbackAddToCart: # Renamed to match the annotation
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
         failureRateThreshold: 50
-        waitDurationInOpenState: 10000
+        minimumNumberOfCalls: 5 # Changed to camelCase
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 6s # Changed to camelCase
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowType: COUNT_BASED
