@@ -16,13 +16,13 @@ management:
       exposure:
         include: health
     health:
-      show-details: always  
+      show-details: always
 
-
-circuitbreaker:
-  configs:
-    default:
-      slidingWindowSize: 10
-      minimum-number-of-calls: 5
-      failureRateThreshold: 50
-      waitDurationInOpenState: 10000
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5 # Corrected property name
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
