@@ -7,16 +7,14 @@ spring:
       uri: mongodb+srv://souravkumarnayak612:iCmVMlIBTnW6OMQV@agrolink.bxuffhn.mongodb.net/agrolink?retryWrites=true&w=majority&appName=AgroLink
       
 
-mangement:
-    health:
-     circuitbreaker:
+management:
+  health:
+    circuitbreaker:
       enabled: true
-    endpoints:
-      web:
-        exposure:
-          include: health
-    endpoints:
-      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health
 
 
 circuitbreaker:
