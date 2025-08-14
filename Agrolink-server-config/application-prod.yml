@@ -24,12 +24,13 @@ management:
 resilience4j:
   circuitbreaker:
     instances:
-      fallbackAddToCart: # Renamed to match the annotation
+      ratingHotelBreaker:
         registerHealthIndicator: true
         eventConsumerBufferSize: 10
         failureRateThreshold: 50
-        minimumNumberOfCalls: 5 # Changed to camelCase
+        minimumNumberOfCalls: 5
         automaticTransitionFromOpenToHalfOpenEnabled: true
-        waitDurationInOpenState: 6s # Changed to camelCase
+        waitDurationInOpenState: 6s
         permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
         slidingWindowType: COUNT_BASED
