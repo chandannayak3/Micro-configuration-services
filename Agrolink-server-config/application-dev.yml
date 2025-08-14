@@ -7,3 +7,13 @@ spring:
 
 welcome:
   message: "Hello from the Dev Profile!"
+
+# application.yml in your Config Server's Git repo
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
